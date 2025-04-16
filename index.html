@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бронирование билетов в кинотеатр</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Бронирование билетов</h1>
+        
+        <div class="movie-selection">
+            <label for="movie">Выберите фильм:</label>
+            <select id="movie" name="movie">
+                <option value="">Выберите фильм</option>
+                <option value="1">Дюна</option>
+                <option value="2">Оппенгеймер</option>
+                <option value="3">Гарри Поттер</option>
+                <option value="4">Мстители</option>
+            </select>
+        </div>
+        
+        <div class="date-time-selection">
+            <label for="date">Дата сеанса:</label>
+            <input type="date" id="date" name="date" min="">
+            
+            <label for="time">Время сеанса:</label>
+            <select id="time" name="time" disabled>
+                <option value="">Сначала выберите дату</option>
+            </select>
+        </div>
+        
+        <div class="hall-container">
+            <h2>Зал: <span id="hall-name">-</span></h2>
+            <div class="screen">Экран</div>
+            
+            <div class="seats-container" id="seats-container">
+                <p>Выберите фильм, дату и время для отображения схемы зала</p>
+            </div>
+            
+            <div class="selected-seats">
+                <h3>Выбранные места:</h3>
+                <ul id="selected-seats-list"></ul>
+                <p>Общая стоимость: <span id="total-price">0</span> руб.</p>
+            </div>
+        </div>
+        
+        <form id="booking-form" class="hidden">
+            <h2>Данные для бронирования</h2>
+            
+            <div class="form-group">
+                <label for="name">Имя:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="phone">Телефон:</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            
+            <input type="hidden" id="selected-seats-input" name="selected_seats">
+            <input type="hidden" id="session-id-input" name="session_id">
+            
+            <button type="submit" class="btn">Забронировать</button>
+        </form>
+        
+        <div id="success-message" class="hidden">
+            <h2>Бронирование успешно завершено!</h2>
+            <p>Номер вашего заказа: <span id="order-number"></span></p>
+            <p>Детали бронирования отправлены на ваш email.</p>
+            <button id="new-booking" class="btn">Новое бронирование</button>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

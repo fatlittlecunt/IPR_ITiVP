@@ -1,0 +1,151 @@
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #b6ff94;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2, h3 {
+    color: #2c3e50;
+}
+
+.movie-selection, .date-time-selection {
+    margin-bottom: 20px;
+    padding: 15px;
+    background: #f9f9f9;
+    border-radius: 5px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+select, input[type="date"], input[type="text"], input[type="email"], input[type="tel"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.hall-container {
+    margin-top: 30px;
+}
+
+.screen {
+    width: 80%;
+    height: 20px;
+    margin: 0 auto 30px;
+    background: #7bcaff;
+    color: white;
+    text-align: center;
+    padding: 5px;
+    border-radius: 3px;
+    box-shadow: 0 3px 10px rgba(52, 152, 219, 0.5);
+}
+
+.seats-container {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.seat {
+    width: 30px;
+    height: 30px;
+    background: #2ecc71;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.seat:hover {
+    transform: scale(1.1);
+}
+
+.seat.selected {
+    background: #e74c3c !important; /* !important гарантирует переопределение других цветов */
+    /* Дополнительные стили для выбранных мест */
+    box-shadow: 0 0 5px rgba(231, 76, 60, 0.8);
+}
+
+.seat.reserved {
+    background: #95a5a6;
+    cursor: not-allowed;
+}
+
+.seat.vip {
+    background: #f39c12;
+}
+
+.selected-seats {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+#selected-seats-list {
+    list-style: none;
+    padding: 0;
+}
+
+#selected-seats-list li {
+    padding: 5px 0;
+    border-bottom: 1px solid #eee;
+}
+
+#booking-form {
+    margin-top: 30px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.btn {
+    background: #828eff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background: #2980b9;
+}
+
+.hidden {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .seats-container {
+        grid-template-columns: repeat(5, 1fr);
+    }
+    
+    .container {
+        padding: 15px;
+    }
+}
